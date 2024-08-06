@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "dev": "gulp",
-    "build": "NODE_ENV=production gulp build --production"
+    "build": "gulp build --production"
   },
   "author": "Jorge Morales",
   "license": "ISC",
