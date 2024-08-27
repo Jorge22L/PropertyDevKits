@@ -63,16 +63,6 @@ function watchArchivos() {
     watch(paths.imagenes, versionWebp);
 }
 
-function cleanBuild() {
-    return src('build/*', { read: false, allowEmpty: true })
-        .pipe(clean());
-}
-
-const build = series(cleanBuild, parallel(css, javascript, imagenes, versionWebp));
-
-
 exports.css = css;
 exports.watchArchivos = watchArchivos;
-exports.cleanBuild = cleanBuild;
-exports.build = build;
-exports.default = build;
+exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos);
