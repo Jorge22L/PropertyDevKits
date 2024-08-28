@@ -31,7 +31,7 @@
                 
             </div> <!-- cierre barra -->
             
-            <?php if(isset($inicio)) { ?>
+            <?php if ($inicio) { ?>
                 <h1>Venta de Casas y Apartamentos</h1>
             <?php } ?>
             
