@@ -4,7 +4,7 @@
   "description": "Proyecto de ejemplo con Nodejs, SASS, GULP, PHP y MySQL",
   "main": "gulpfile.js",
   "scripts": {
-    "dev" : "gulp"
+    "dev": "gulp"
   },
   "keywords": [
     "nodejs",
@@ -31,5 +31,8 @@
     "gulp-webp": "^4.0.1",
     "sass": "^1.49.9",
     "terser": "^4.8.0"
+  },
+  "dependencies": {
+    "bienes_raices": "file:"
   }
 }

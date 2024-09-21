@@ -1,3 +1,4 @@
+
 .no-webp .inicio{
     background-image: url(../img/header.jpg);
 }
@@ -16,14 +17,15 @@
         @include tablet{
             min-height: 70rem;
         }
+
         .contenido-header{
             @include tablet{
                 min-height: 70rem;
             }
         }
     }
-
 }
+
 
 .contenido-header{
     display: flex;
