@@ -32,5 +32,8 @@
     "gulp-webp": "^4.0.1",
     "sass": "^1.77.8",
     "terser": "^4.8.0"
+  },
+  "dependencies": {
+    "bienes_raices": "file:"
   }
 }

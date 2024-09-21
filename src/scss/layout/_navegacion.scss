@@ -28,10 +28,15 @@
 }
 
 .navegacion{
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: visibility .3s ease-in-out, opacity .5s linear, height .5s linear;
     @include tablet{
         display: flex;
-        align-items: center
-        
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
     }
     a{
         color: $blanco;
@@ -48,4 +53,22 @@
             }
         }
     }
+}
+
+/** Menu de hamburguesa */
+
+.mobile-menu {
+    @include tablet{
+        display: none;
+    }
+    img{
+        width: 5rem;
+    }
+}
+
+.mostrar
+{
+    visibility: visible;
+    opacity: 1;
+    height: auto;
 }
