@@ -2,6 +2,14 @@
     @include boton($naranja, inline-block);
 }
 
+.boton-naranja-block{
+    @include boton($naranja, block);
+}
+
+.boton-rojo-block{
+    @include boton($rojo, block);
+}
+
 .boton-verde{
     @include boton($verde, inline-block);
 }
