@@ -1,3 +1,6 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
 @include tablet{
     .seccion-inferior{
         display: grid;
@@ -13,6 +16,7 @@
         grid-template-columns: 1fr 2fr;
         column-gap: 2rem;
     }
+
     &:last-of-type{
         margin-bottom: 0;
     }
@@ -39,12 +43,14 @@
         line-height: 1.4;
     }
 
-    &::after{
-        content: '';
-        display: block;
-        width: 15rem;
-        height: 0.5rem;
-        background-color: $verde;
-        margin-top: 1rem;
+        &::after{
+            content: '';
+            display: block;
+            width: 15rem;
+            background-color: $verde;
+            margin-top: 1rem;
+            height: .5rem;
+        }
+
     }
 }

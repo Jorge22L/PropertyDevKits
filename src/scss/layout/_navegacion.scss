@@ -1,4 +1,7 @@
-.derecha {
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.derecha{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,8 +9,8 @@
     @include tablet{
         align-items: flex-end;
     }
-    
 }
+
 .barra{
     display: flex;
     flex-direction: column;
@@ -16,6 +19,7 @@
     img{
         height: 8rem;
     }
+
     @include tablet{
         flex-direction: row;
         justify-content: space-between;
@@ -30,7 +34,7 @@
     visibility: hidden;
     opacity: 0;
     height: 0;
-    transition: visibility .3s ease-in-out, opacity 0.5s linear, height 0.5s linear;
+    transition: visibility .3s ease-in-out, opacity .5s linear, height .5s linear;
     @include tablet{
         display: flex;
         align-items: center;
@@ -42,7 +46,7 @@
         text-decoration: none;
         font-size: 2.2rem;
         display: block;
-        text-align: center;
+        align-items: center;
 
         @include tablet{
             margin-right: 2rem;
@@ -54,18 +58,19 @@
     }
 }
 
-/** Menu de hamburguesa **/
-.mobile-menu{
+/** Menu de hamburguesa */
+
+.mobile-menu {
     @include tablet{
         display: none;
     }
-
     img{
         width: 5rem;
     }
 }
 
-.mostrar{
+.mostrar
+{
     visibility: visible;
     opacity: 1;
     height: auto;

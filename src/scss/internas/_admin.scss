@@ -1,13 +1,32 @@
-table.propiedades{
+@use '../base/variables' as *;
+
+.alerta{
+    padding: 0.5rem;
+    text-align: center;
+    color: $blanco;
+    font-weight: $bold;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+
+    &.error{
+        background-color: $rojo;
+    }
+
+    &.exito{
+        background-color: $verde;
+    }
+}
+table.propiedades {
     margin-top: 4rem;
     width: 100%;
     border-spacing: 0;
 
     thead{
-        background-color: $verde;
+        background-color: $verde;;
         th{
             color: $blanco;
             padding: 2rem;
+            text-transform: uppercase;
         }
     }
 
