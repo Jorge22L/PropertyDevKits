@@ -4,8 +4,8 @@
     }
 }
 .anuncio{
-    background-color: lighten($gris, 5);
-    border: 1px solid lighten($grisOscuro, 10);
+    background-color: color.adjust($gris, $lightness: 5%);
+    border: 1px solid color.adjust($grisOscuro, $lightness: 10%);
     margin-bottom: 2rem;
 
     .contenido-anuncio{
