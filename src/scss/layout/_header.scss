@@ -1,3 +1,7 @@
+@use 'sass:color';
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
 .no-webp .inicio{
     background-image: url(../img/header.jpg);
 }
