@@ -1,17 +1,21 @@
-const { src, dest, watch, series, parallel } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const autoprefixer = require('autoprefixer');
-const postcss = require('gulp-postcss')
-const sourcemaps = require('gulp-sourcemaps')
-const cssnano = require('cssnano');
-const concat = require('gulp-concat');
-const terser = require('gulp-terser-js');
-const rename = require('gulp-rename');
-const imagemin = require('gulp-imagemin'); // Minificar imagenes 
-const notify = require('gulp-notify');
-const cache = require('gulp-cache');
-const clean = require('gulp-clean');
-const webp = require('gulp-webp');
+import gulp from 'gulp';
+const { src, dest, watch, series, parallel } = gulp;
+import gulpSass from 'gulp-sass';
+import * as dartSass from 'sass';
+import autoprefixer from 'autoprefixer';
+import postcss from 'gulp-postcss';
+import sourcemaps from 'gulp-sourcemaps';
+import cssnano from 'cssnano';
+import concat from 'gulp-concat';
+import terser from 'gulp-terser';
+import rename from 'gulp-rename';
+import imagemin from 'gulp-imagemin';
+import notify from 'gulp-notify';
+import cache from 'gulp-cache'
+import clean from 'gulp-clean';
+import webp from 'gulp-webp'
+
+const sass = gulpSass(dartSass);
 
 const paths = {
     scss: 'src/scss/**/*.scss',
@@ -22,9 +26,9 @@ const paths = {
 function css() {
     return src(paths.scss)
         .pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         .pipe(postcss([autoprefixer(), cssnano()]))
-        // .pipe(postcss([autoprefixer()]))
+        //.pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('.'))
         .pipe(dest('build/css'));
 }
@@ -50,7 +54,7 @@ function versionWebp() {
     return src(paths.imagenes)
         .pipe(webp())
         .pipe(dest('build/img'))
-        .pipe(notify({ message: 'Imagen Completada' }));
+        .pipe(notify({ message: 'Imagen Webp Completada' }));
 }
 
 
@@ -61,6 +65,9 @@ function watchArchivos() {
     watch(paths.imagenes, versionWebp);
 }
 
-exports.css = css;
-exports.watchArchivos = watchArchivos;
-exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos); 
+export const build = parallel(css, javascript, imagenes, versionWebp, watchArchivos);
+export default build;
+
+// exports.css = css;
+// exports.watchArchivos = watchArchivos;
+// exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos); 

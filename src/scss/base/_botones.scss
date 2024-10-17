@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .boton-naranja{
     @include boton($naranja, inline-block);
 }

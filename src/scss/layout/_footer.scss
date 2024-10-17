@@ -1,3 +1,5 @@
+@use '../base/variables' as *;
+
 .footer{
     padding: calc($separacion / 2);
     background-color: $grisOscuro;
