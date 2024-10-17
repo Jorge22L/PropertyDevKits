@@ -1,5 +1,6 @@
 <?php
-
+require '../../includes/funciones.php';
+incluirTemplate('header');
 //Incluir conexión a base de datos
 require '../../includes/config/database.php';
 $db = conectarDB();
@@ -67,8 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 
-    require '../../includes/funciones.php';
-    incluirTemplate('header');
+    
 
 
 }
@@ -132,5 +132,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </main>
 
 <?php
-incluirTemplate('footer');
+
+    incluirTemplate('footer');
 ?>
